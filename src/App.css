@@ -2,4 +2,49 @@
   margin:0;
 }
 img{max-width:100%;}
-/*  */
+
+
+@media all and (max-width:1266px){
+    /*team card*/
+    .sport-card{
+      width:45%;
+    }
+}
+
+@media all and (max-width:992px){
+  .team-text{
+    width:90%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .team-img{
+    width:100%;
+  }
+  .teamDescription p{
+    text-align: justify;
+  }
+  
+}
+
+@media all and (max-width:850px){
+  /*team card*/
+  .sport-card{
+    width:41%;
+  }
+}
+
+@media all and (max-width:768px){
+  /*team card*/
+  .sport-card{
+    width:95%;
+  }
+  .banner h1{
+    font-size:25px;
+  }
+  /*details page*/
+  .team-text h2{
+    font-size:25px;
+    margin-bottom:20px;
+  }
+}

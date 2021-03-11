@@ -11,40 +11,35 @@ import { faFacebook, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-i
 const TeamDetails = () => {
     const { id } = useParams();
     const [teamDetails, setTeamDetails] = useState([]);
-
-
     useEffect(()=>{
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setTeamDetails(data.teams[0]))
-    }, []);
-
-    const {strLeague,strLeague2, strCountry, strSport, strGender, intFormedYear,strTeamLogo, strTwitter,strFacebook,strYoutube,strStadiumDescription,strDescriptionEN } = teamDetails;
-
+    }, [id]);
+    const {strLeague2, strCountry, strSport, strGender, intFormedYear,strTeamLogo, strTwitter,strFacebook,strYoutube,strStadiumDescription,strDescriptionEN, strTeamBanner } = teamDetails;
     // team detected famale or male
-    let gander= '';
-    if(strGender == 'Male'){
-        const gander = maleImg;
+    let gander;
+    if(strGender === 'Male'){
+         gander = maleImg;
     }else{
         gander = femaleImg;
     }
-
     return (
         <>
-        <div className="teamDetailsBanner">
+        <div className="teamDetailsBanner" style={{backgroundImage:`url(${strTeamBanner})`}}>
             <img src={strTeamLogo} alt="logo"/>
         </div>
         <div className="teamInfo">
             <div className="team-text">
-                <h2>{strLeague}</h2>
+                <h2>{strLeague2}</h2>
                 <p>Founded: {intFormedYear}</p>
                 <p>Country: {strCountry}</p>
                 <p>Sport Type: {strSport}</p>
                 <p>Gender: {strGender}</p>
             </div>
             <div className="team-img">
-                <img src={console.log(gander)} alt="teamImage"/>
+                <img src={gander} alt="teamImage"/>
             </div>
         </div>
         <div className="teamDescription">
