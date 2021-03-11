@@ -1,0 +1,36 @@
+.sport-card{
+    width:27%;
+    float: left;
+    padding:30px 15px;
+    box-shadow: 0 0 16px #f7e0e0;
+    margin:30px 20px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.sport-card img{
+    width:150px;
+    height:100px
+}
+.sport-card h3{
+    margin:15px 0;
+}
+.sport-card p{
+    margin-bottom:30px;
+}
+.sport-card button{
+    border:none;
+    outline:none;
+    padding:10px 40px;
+    background:blue;
+    color:#fff;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:16px;
+}
+.arrowIcon{
+    margin-left: 15px;
+}
+.sport-card button:hover{
+    background:black;
+    color:orange;
+}
